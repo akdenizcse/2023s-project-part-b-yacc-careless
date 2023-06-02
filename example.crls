@@ -1,0 +1,37 @@
+int a = 5; bool b = true;
+string c = "careLess";
+private double d = -2.5;
+char e = 'a';
+if (a == b) in
+	mahirsays( a ); 
+	out
+elsif (a > b) in
+	mahirsays( b );
+	out
+else in
+	mahirsays(a + b);
+	out
+mahirsees b = new mahirsees();
+for (int i=0, i <= 5, i++) in
+	mahirsays(i);
+	out
+while (a > 4) in
+	mahirsays(a);
+	out
+public func mahir (bool a, bool b) in
+	if ( a and b ) in
+		mahirsays(a);
+		out
+	elsif (a or b) in
+		mahirsays(a, b);
+		out
+	else in
+		mahirsays(b);
+		out
+	out
+int a = 5 + 6;
+int b = 5 - 6;
+int c = 5 / 6;
+int d = 5 % 6;
+int e = 5 * 6;
+#indentation is not important for careLess it's just for now for example.mrt to look good
