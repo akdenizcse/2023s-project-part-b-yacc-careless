@@ -81,23 +81,23 @@ extern int yydebug;
     EQUALS = 282,                  /* EQUALS  */
     IN = 283,                      /* IN  */
     OUT = 284,                     /* OUT  */
-    ZERO = 285,                    /* ZERO  */
-    COMMA = 286,                   /* COMMA  */
-    DOT = 287,                     /* DOT  */
-    NOT = 288,                     /* NOT  */
-    AND = 289,                     /* AND  */
-    OR = 290,                      /* OR  */
-    XOR = 291,                     /* XOR  */
-    FUNCTION = 292,                /* FUNCTION  */
-    PRINT = 293,                   /* PRINT  */
-    SCANNER = 294,                 /* SCANNER  */
-    NEW = 295,                     /* NEW  */
-    ADD = 296,                     /* ADD  */
-    SUBTRACT = 297,                /* SUBTRACT  */
-    MULTIPLY = 298,                /* MULTIPLY  */
-    DIVIDE = 299,                  /* DIVIDE  */
-    MOD = 300,                     /* MOD  */
-    COMMENT = 301,                 /* COMMENT  */
+    COMMA = 285,                   /* COMMA  */
+    DOT = 286,                     /* DOT  */
+    NOT = 287,                     /* NOT  */
+    AND = 288,                     /* AND  */
+    OR = 289,                      /* OR  */
+    XOR = 290,                     /* XOR  */
+    FUNCTION = 291,                /* FUNCTION  */
+    PRINT = 292,                   /* PRINT  */
+    SCANNER = 293,                 /* SCANNER  */
+    NEW = 294,                     /* NEW  */
+    ADD = 295,                     /* ADD  */
+    SUBTRACT = 296,                /* SUBTRACT  */
+    MULTIPLY = 297,                /* MULTIPLY  */
+    DIVIDE = 298,                  /* DIVIDE  */
+    MOD = 299,                     /* MOD  */
+    COMMENT = 300,                 /* COMMENT  */
+    ZERO = 301,                    /* ZERO  */
     BOOLEAN = 302,                 /* BOOLEAN  */
     STRING_LITERAL = 303,          /* STRING_LITERAL  */
     VARIABLE = 304,                /* VARIABLE  */
@@ -140,23 +140,23 @@ extern int yydebug;
 #define EQUALS 282
 #define IN 283
 #define OUT 284
-#define ZERO 285
-#define COMMA 286
-#define DOT 287
-#define NOT 288
-#define AND 289
-#define OR 290
-#define XOR 291
-#define FUNCTION 292
-#define PRINT 293
-#define SCANNER 294
-#define NEW 295
-#define ADD 296
-#define SUBTRACT 297
-#define MULTIPLY 298
-#define DIVIDE 299
-#define MOD 300
-#define COMMENT 301
+#define COMMA 285
+#define DOT 286
+#define NOT 287
+#define AND 288
+#define OR 289
+#define XOR 290
+#define FUNCTION 291
+#define PRINT 292
+#define SCANNER 293
+#define NEW 294
+#define ADD 295
+#define SUBTRACT 296
+#define MULTIPLY 297
+#define DIVIDE 298
+#define MOD 299
+#define COMMENT 300
+#define ZERO 301
 #define BOOLEAN 302
 #define STRING_LITERAL 303
 #define VARIABLE 304

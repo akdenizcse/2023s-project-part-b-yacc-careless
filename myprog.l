@@ -56,9 +56,8 @@ new                         {return NEW;}
 [0-9]+\.[0-9]+              {yylval.num = atoi(yytext); return FLOATING_POINT_NUMBER;}
 ^[-][0-9]+\.[0-9]+          {yylval.num = atoi(yytext); return NEGATIVE_FLOATING_POINT_NUMBER;}
 "//".*                      /* Ignore single-line comments */
-[a-zA-Z][a-zA-Z0-9_]*       {yylval.str = strdup(yytext); return VARIABLE;}
-\ |\t|\n                                        ;
-[^\ |\t|\n ]                                    ;
+[a-zA-Z][a-zA-Z0-9_]*       {yylval.id = yytext[0]; return VARIABLE;}
+[ \t\n]                                         ;
 .			                {ECHO; yyerror ("unexpected character");}
 %%
 int yywrap (void) {
