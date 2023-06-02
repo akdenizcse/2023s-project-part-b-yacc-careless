@@ -48,16 +48,34 @@ assignment		: VARIABLE EQUALS exp {updateSymbolVal($1,$3);}
 comment 		: COMMENT              { /* Do nothing, ignore single-line comments */ }
 				;
 
-conditional		: IF OPEN_PARANTHESES boolexp CLOSE_PARANTHESES IN exp OUT
+conditional		: IF OPEN_PARANTHESES boolexp CLOSE_PARANTHESES IN exp ';' OUT ';' {if($3==1){ printf("%d\n", $6); } }
+				| IF OPEN_PARANTHESES boolexp CLOSE_PARANTHESES IN PRINT exp ';' OUT ';' {if($3==1){ printf("%d\n", $7); } }
+				| IF OPEN_PARANTHESES boolexp CLOSE_PARANTHESES IN exp ';' OUT ELSE IN exp ';' OUT { if($3==1){
+                                            			printf("%d\n", $6);
+                                               			}else {
+                                               			printf("%d\n", $11);} }
+				| IF OPEN_PARANTHESES boolexp CLOSE_PARANTHESES IN exp ';' OUT ELSE IN PRINT exp ';' OUT { if($3==1){
+                                            			printf("%d\n", $6);
+                                               			}else {
+                                               			printf("%d\n", $12);} }	
+				| IF OPEN_PARANTHESES boolexp CLOSE_PARANTHESES IN PRINT exp ';' OUT ELSE IN exp ';' OUT { if($3==1){
+                                            			printf("%d\n", $7);
+                                               			}else {
+                                               			printf("%d\n", $12);} }	
+				| IF OPEN_PARANTHESES boolexp CLOSE_PARANTHESES IN PRINT exp ';' OUT ELSE IN PRINT exp ';' OUT { if($3==1){
+                                            			printf("%d\n", $7);
+                                               			}else {
+                                               			printf("%d\n", $13);} }									
+				| IF OPEN_PARANTHESES boolexp CLOSE_PARANTHESES IN exp ';' OUT conditional
 				;
 
-boolexp			: POSITIVE_NUMBER ISEQUAL POSITIVE_NUMBER    	{ $$ = $1 == $3 ;
-									if($$==1){
-                                	printf("TRUE\n");
-                                	}else{
-                                	printf("FALSE\n");
-                                	}
-                					}
+boolexp			: term ISEQUAL term            		{ $$ = $1 == $3;}
+        		| term GREATER_THAN term            { $$ = $1 > $3;}
+        		| term LESS_THAN term             	{ $$ = $1 < $3;}
+        		| term GREATER_THAN_OR_EQUAL term   { $$ = $1 >= $3;}
+        		| term LESS_THAN_OR_EQUAL term      { $$ = $1 <= $3;}
+				| term AND term						{ $$ = $1 && $3;}
+				| term OR term						{ $$ = $1 || $3;}
 				;
 
 exp    			: term                  {$$ = $1;}
